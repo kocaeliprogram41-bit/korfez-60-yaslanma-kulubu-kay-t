@@ -1,123 +1,131 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>+60 Yaş Yaşlanma Kulübü</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-image: thumbs;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>+60 Yaş Yaşlanma Kulübü</title>
 
-      display: flex;
-      justify-content: right;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      background-image: url("kulüp.jpg");
-      background-size: cover;
-      background-position: center;
-      
+<style>
+body{
+font-family:Segoe UI;
+background:url("kulüp.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:right;
+align-items:center;
+min-height:100vh;
+margin:0;
+}
 
-    }
+.form-container{
+background:rgba(255,255,255,0.9);
+border-radius:20px;
+padding:40px;
+width:100%;
+max-width:500px;
+box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
 
-    .form-container {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(15px);
-      border-radius: 20px;
-      padding: 40px;
-      width: 100%;
-      max-width: 500px;
-      box-shadow: 12px 12px 30px #b0c4de, -12px -12px 30px #ffffff;
-      animation: glow 4s infinite alternate;
-    }
+h1{
+text-align:center;
+color:#2f4f6f;
+}
 
-    @keyframes glow {
-      from { box-shadow: 12px 12px 30px #b0c4de, -12px -12px 30px #ffffff; }
-      to { box-shadow: 0 0 25px rgba(150,180,220,0.9), 0 0 50px rgba(255,255,255,0.8); }
-    }
+label{
+display:block;
+margin-top:15px;
+font-weight:600;
+}
 
-    h1 {
-      text-align: center;
-      color: #2f4f6f;
-      margin-bottom: 25px;
-      text-shadow: 0 0 8px rgba(180,200,220,0.8);
-    }
+input,select{
+width:100%;
+padding:12px;
+margin-top:8px;
+border-radius:10px;
+border:none;
+background:#f0f4f9;
+}
 
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: 600;
-      color: #2f4f6f;
-    }
+button{
+margin-top:25px;
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:#dce6f5;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
 
-    input, select {
-      width: 100%;
-      padding: 12px;
-      margin-top: 8px;
-      border: none;
-      border-radius: 12px;
-      background: #f0f4f9;
-      box-shadow: inset 6px 6px 12px #b0c4de, inset -6px -6px 12px #ffffff;
-      font-size: 14px;
-      transition: all 0.3s ease;
-    }
-
-    input:focus, select:focus {
-      outline: none;
-      background: #ffffff;
-      box-shadow: 0 0 12px rgba(150,180,220,0.9), 0 0 20px rgba(255,255,255,0.8);
-    }
-
-    button {
-      margin-top: 25px;
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 12px;
-      background: linear-gradient(145deg, #dce6f5, #f9f9f9);
-      box-shadow: 8px 8px 16px #b0c4de, -8px -8px 16px #ffffff;
-      font-size: 16px;
-      font-weight: bold;
-      color: #2f4f6f;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    button:hover {
-      background: linear-gradient(145deg, #f9f9f9, #dce6f5);
-      box-shadow: 0 0 15px rgba(150,180,220,0.9), 0 0 30px rgba(255,255,255,0.8);
-    }
-  </style>
+#sonuc{
+margin-top:15px;
+font-weight:bold;
+}
+</style>
 </head>
+
 <body>
-  <div class="form-container">
-    <h1>+60 Yaş Yaşlanma Kulübü</h1>
-    <form>
-      <label for="tc">TC Kimlik Numaranız:</label>
-      <input type="text" id="tc" maxlength="11" required>
 
-      <label for="telefon">Telefon Numaranız:</label>
-      <input type="tel" id="telefon" placeholder="05xx xxx xx xx" required>
+<div class="form-container">
 
-      <label for="adres">Adresiniz:</label>
-      <input type="text" id="adres" required>
+<h1>+60 Yaş Yaşlanma Kulübü</h1>
 
-      <label for="isim">Adınız ve Soyadınız:</label>
-      <input type="text" id="isim" required>
+<form id="form">
 
-      <label for="dogum">Doğum Tarihiniz:</label>
-      <input type="date" id="dogum" max="1966-01-01" required>
+<label>TC Kimlik Numaranız</label>
+<input type="text" name="tc" maxlength="11" required>
 
-      <label for="cinsiyet">Cinsiyetiniz:</label>
-      <select id="cinsiyet" required>
-        <option value="erkek">Erkek</option>
-        <option value="kadın">Kadın</option>
-        <option value="belirtmek-istemiyorum">Belirtmek İstemiyorum</option>
-      </select>
+<label>Telefon Numaranız</label>
+<input type="tel" name="telefon" required>
 
-      <button type="submit">Kayıt Ol</button>
-    </form>
-  </div>
+<label>Adresiniz</label>
+<input type="text" name="adres" required>
+
+<label>Adınız ve Soyadınız</label>
+<input type="text" name="isim" required>
+
+<label>Doğum Tarihi</label>
+<input type="date" name="dogum" required>
+
+<label>Cinsiyet</label>
+<select name="cinsiyet" required>
+<option value="erkek">Erkek</option>
+<option value="kadin">Kadın</option>
+  
+</select>
+
+<label>Mesleğiniz</label>
+<input type="text" name="meslek" required>
+
+<button type="submit">Kayıt Ol</button>
+
+</form>
+
+<p id="sonuc"></p>
+
+</div>
+
+<script>
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  fetch("https://script.google.com/macros/s/AKfycbzKdkDdDm8uT1ryHmsHDeOxuD25Q7e35rG3RZfFPw10UbG4lLTr7SS5NfoOb7cCUSnTug/exec", {
+    method: "POST",
+    body: data
+  })
+  .then(res => res.text())
+  .then(data => {
+    alert("Kayıt başarılı");
+    form.reset();
+  });
+});
+</script>
+
 </body>
 </html>
